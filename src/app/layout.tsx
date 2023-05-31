@@ -1,6 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import Header from './Header';
+import Sidebar from './Sidebar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,8 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        {children}
+        <Sidebar />
+        <main className="p-10 max-w-7xl w-fill mx-auto overflow-y-auto">
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );
